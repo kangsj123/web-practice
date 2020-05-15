@@ -4,18 +4,40 @@
   <title>WEB1 - javascript</title>
   <meta charset="utf-8">
   <style>
-    a{
+    /*
+    id 선택자
+    */
+    #active{
+      color:red;
+    }
+    #ref{
       color:blue;
+    }
+    /*
+    class 선택자
+    */
+    .saw{
+      color:gray;
+    }
+    /*
+    tag 선택자
+    */
+    a {
+      color:black;
       text-decoration: none;
+    }
+    h1{
+      font-size: 45px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html" style="color:red;text-decoration:underline">JAVASCRIPT</a></li>
+    <li><a href="1.html" class="saw">HTML</a></li>
+    <li><a href="2.html" class="saw">CSS</a></li>
+    <li><a href="3.html" id="active">JAVASCRIPT</a></li>
   </ol>
   <h2>JAVASCRIPT이란 무엇인가?</h2>
   <h3><a href="https://www.w3schools.com/js/" target="_blank" title="javascript specification">
