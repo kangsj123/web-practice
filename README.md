@@ -1,8 +1,10 @@
 # web-practice  
-studying web from 생활코딩  
+studying web 
 - [x] html  
-- [x] css  
+- [x] css(~5/16)  
+- [ ] kakao clone coding(ing)
 - [ ] javascript  
 - [ ] node js  
- 
+- [ ] react
+- [ ] spring 
  note : https://kangsj123.github.io/web-practice/
