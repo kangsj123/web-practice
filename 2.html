@@ -7,18 +7,22 @@
     /*
     id 선택자
     */
-    #active{
-      color:red;
-    }
     #ref{
       color:blue;
     }
+    #grid{
+      display:grid;
+      grid-template-columns: 150px 1fr;
+    }
+    #article{
+      padding-left: 25px;
+    }
     /*
     class 선택자
-    */
     .saw{
       color:gray;
     }
+    */
     /*
     tag 선택자
     */
@@ -29,14 +33,28 @@
     h1{
       font-size: 45px;
       text-align: center;
+      border-bottom:1px solid gray;
+      margin:0;
+      padding:20px;
+    }
+    #grid ol{
+      border-right:1px solid gray;
+      width:100px;
+      margin:0;
+      padding:20px;
+      padding-left:33px;
+    }
+    body{
+      margin:0;
     }
   </style>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
+  <div id="grid">
   <ol>
-    <li><a href="1.html" class="saw">HTML</a></li>
-    <li><a href="2.html" class="saw" id="active">CSS</a></li>
+    <li><a href="1.html">HTML</a></li>
+    <li><a href="2.html">CSS</a></li>
     <li><a href="3.html">JAVASCRIPT</a></li>
   </ol>
   <!--
@@ -47,65 +65,82 @@
     <li><a href="3.html"><font color = "orange">JAVASCRIPT</font></a></li>
   </ol>
   -->
-  <h2>CSS란 무엇인가?</h2>
-  <h3><a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="css specification">
-    Cascading Style Sheet(CSS)</a> is a language that describes the style of an HTML document.
-    CSS describes how HTML elements should be displayed.
-  </h3>
-  <img src="coding.jpg" width="40%">
-  <p style="margin-top:40px">
-    css : html과 분리된, 디자인에 관여하는 것.<br>
-    <h4>1. style tag 안에 css 문법을 넣어준다.</h4>
-    -> font로 각 글자의 색깔을 표현하는 대신, 헤드의 style 태그 안에 해당 태그 부분의 스타일을 지정하여 표현한다. <br>
-    head에 안에 어떤 부분에 css를 적용할지 명시하는 a{}와 같은 <strong>선택자</strong>를 적어준다.<br>
-    그리고 그 안에는 color:red와 같이 한국어로는 '효과', 영어로는 'declaration'을 의미하는 값을 넣어준다.<br>
-    여러 효과를 넣어줄 수 있으며 이때에는 세미콜론(;)을 이용하여 구분해준다.<br>
-    <strong>효과</strong> : 중복 제거, html을 이용하여 디자인하는 것보다 훨씬 효과적, 디자인과 관련된 태그를 따로 분리함으로써
-    정보만을 가지고 있는 코드를 분석하기가 용이하다.<br>
-    <h4>2. style 속성을 이용한다.</h4>
-    -> 디자인을 지정하려는 태그 부분에 속성 style을 넣어 값을 지정한다. ex. style="color:red"<br>
-    style 부분은 html의 속성이며 그 값으로 css의 효과가 들어온다.<br>
-    웹브라우저는 css의 문법에 따라 해석해서 그 결과를 style 속성이 위치하고 있는 태그에 적용할 것이다.<br>
-    만약 head 안의 style에 해당 태그에 모두 적용한 후 그 중 하나의 코드에만 다른 css 효과를 적용한다면<br>
-    style 속성을 이용한다. ex. text-decoration:underline<br>
-    여러 개 적용할 때에는 style="color:red;text-decoration:underline"<br>
-    <h4>3. 클래스를 지정한다.</h4>
-    -> 원하는 태그에 class 속성을 추가하여 class 이름을 지정해준다.<br>
-    그리고 head 내부에 .(class 이름){}를 적어서 효과를 지정한다.<br>
-    이때 .(class 이름)은 해당 class 이름을 가진 태그들에게 {}안의 효과를 적용하겠다는 의미이다.<br>
-    만약 해당 클래스 내에서도 특정 태그는 다른 효과를 적용하고 싶다면 class="class1 class2"로 지정하여<br>
-    head에 다른 효과를 지정해서 명시해주면 된다.<br>
-    이때 head에서 상하 위치가 중요한데 아래에 있을 수록(==보다 가까이 있는 것이) 우선 순위가 높다.<br>
-    <h4>4. id 선택자를 사용한다.</h4>
-    <strong>** 우선순위 : 태그 선택자 < 클래스 선택자 < 아이디 선택자  -> 같은 선택자인 경우
-    아래에 있을수록, 더 가까울수록 우선순위가 높다.</strong><br>
-    id 선택자는 head 안에 #(id이름){}으로 효과를 지정해주며 위치에 관계없이<br>
-    가장 높은 우선순위를 갖습니다.<br>
-    id 선택자 이름은 한 번이라도 사용된 경우, 중복되어 더 이상 등장할 수 없다.<br>
-    -> 이 문서에서는 유일무이한 값. 따라서 a 태그와 같이 상대적으로 포괄적인 값에 비해 훨씬 구체적이고 범위가 좁다.<br>
-    범위가 좁을 수록 더 우선순위가 높다고 기억하기**<br>
-    <h3>box model</h3>
-    <a href="box.html" id="ref">참고 - css box model</a><br>
-    <strong>1. block level element(==tag)</strong><br>
-    - h1 tag의 경우, 한 줄을 차지한다.<br><br>
+  <div id="article">
+    <h2>CSS란 무엇인가?</h2>
+    <h3><a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="css specification">
+      Cascading Style Sheet(CSS)</a> is a language that describes the style of an HTML document.
+      CSS describes how HTML elements should be displayed.
+    </h3>
+    <img src="coding.jpg" width="40%">
+    <p style="margin-top:40px">
+      css : html과 분리된, 디자인에 관여하는 것.<br>
+      <h4>1. style tag 안에 css 문법을 넣어준다.</h4>
+      -> font로 각 글자의 색깔을 표현하는 대신, 헤드의 style 태그 안에 해당 태그 부분의 스타일을 지정하여 표현한다. <br>
+      head에 안에 어떤 부분에 css를 적용할지 명시하는 a{}와 같은 <strong>선택자</strong>를 적어준다.<br>
+      그리고 그 안에는 color:red와 같이 한국어로는 '효과', 영어로는 'declaration'을 의미하는 값을 넣어준다.<br>
+      여러 효과를 넣어줄 수 있으며 이때에는 세미콜론(;)을 이용하여 구분해준다.<br>
+      <strong>효과</strong> : 중복 제거, html을 이용하여 디자인하는 것보다 훨씬 효과적, 디자인과 관련된 태그를 따로 분리함으로써
+      정보만을 가지고 있는 코드를 분석하기가 용이하다.<br>
+      <h4>2. style 속성을 이용한다.</h4>
+      -> 디자인을 지정하려는 태그 부분에 속성 style을 넣어 값을 지정한다. ex. style="color:red"<br>
+      style 부분은 html의 속성이며 그 값으로 css의 효과가 들어온다.<br>
+      웹브라우저는 css의 문법에 따라 해석해서 그 결과를 style 속성이 위치하고 있는 태그에 적용할 것이다.<br>
+      만약 head 안의 style에 해당 태그에 모두 적용한 후 그 중 하나의 코드에만 다른 css 효과를 적용한다면<br>
+      style 속성을 이용한다. ex. text-decoration:underline<br>
+      여러 개 적용할 때에는 style="color:red;text-decoration:underline"<br>
+      <h4>3. 클래스를 지정한다.</h4>
+      -> 원하는 태그에 class 속성을 추가하여 class 이름을 지정해준다.<br>
+      그리고 head 내부에 .(class 이름){}를 적어서 효과를 지정한다.<br>
+      이때 .(class 이름)은 해당 class 이름을 가진 태그들에게 {}안의 효과를 적용하겠다는 의미이다.<br>
+      만약 해당 클래스 내에서도 특정 태그는 다른 효과를 적용하고 싶다면 class="class1 class2"로 지정하여<br>
+      head에 다른 효과를 지정해서 명시해주면 된다.<br>
+      이때 head에서 상하 위치가 중요한데 아래에 있을 수록(==보다 가까이 있는 것이) 우선 순위가 높다.<br>
+      <h4>4. id 선택자를 사용한다.</h4>
+      <strong>** 우선순위 : 태그 선택자 < 클래스 선택자 < 아이디 선택자  -> 같은 선택자인 경우
+      아래에 있을수록, 더 가까울수록 우선순위가 높다.</strong><br>
+      id 선택자는 head 안에 #(id이름){}으로 효과를 지정해주며 위치에 관계없이<br>
+      가장 높은 우선순위를 갖습니다.<br>
+      id 선택자 이름은 한 번이라도 사용된 경우, 중복되어 더 이상 등장할 수 없다.<br>
+      -> 이 문서에서는 유일무이한 값. 따라서 a 태그와 같이 상대적으로 포괄적인 값에 비해 훨씬 구체적이고 범위가 좁다.<br>
+      범위가 좁을 수록 더 우선순위가 높다고 기억하기**<br><br>
+    </p>
+    <p style="margin-top:40px">
+      <h3 style="display:inline;">< box model ></h3>
+      <a href="box.html" id="ref"> 참고 - css box model</a><br><br>
+      <strong>1. block level element(==tag)</strong><br>
+      - h1 tag, div tag, ol tag의 경우, 한 줄을 차지한다.<br><br>
 
-    <strong>2. inline level element</strong><br>
-    - a tag의 경우, 글자 만큼의 자리를 차지한다.<br><br>
+      <strong>2. inline level element</strong><br>
+      - a tag, span tag의 경우, 글자 만큼의 자리를 차지한다.<br><br>
 
-    h1과 a 태그의 효과가 같은 경우, h1,a{}로 묶어서 나타낸다.<br>
-    border-width, border-color와 같이 border가 반복되는 경우, border:5px solid red<br>
-    로 순서에 상관없이 나열하면 된다.<br><br>
+      h1과 a 태그의 효과가 같은 경우, h1,a{}로 묶어서 나타낸다.<br>
+      border-width, border-color와 같이 border가 반복되는 경우, border:5px solid red<br>
+      로 순서에 상관없이 나열하면 된다.<br><br>
 
-    box와 컨텐츠의 여백을 주기 위해서는 padding을 사용한다.<br>
-    테두리와 테두리 사이 간격 지정할 때는 margin을 사용한다.<br>
-    너비는 width, 높이는 height로 지정한다.<br><br>
+      box와 컨텐츠의 여백을 주기 위해서는 padding을 사용한다.<br>
+      테두리와 테두리 사이 간격 지정할 때는 margin을 사용한다.<br>
+      너비는 width, 높이는 height로 지정한다.
+      border-right, border-bottom과 같은 효과를 적용하고 마우스 오른쪽-> 검사 에서<br>
+      조정이 필요한 값 margin, padding 등을 조절한다.<br>
+      display 속성은 none, block, inline 등의 값을 넣을 수 있다.<br>
+      기본 태그로 div(block level), span(inline level) 태그 사용 가능.<br><br>
 
-    오른쪽 버튼을 눌러서 검사 버튼 누르면 자세하게 확인 가능.<br>
-
-  </p>
-  <p style="margin-top:40px">
-  </p>
-  <p style="margin-top:40px">
-  </p>
+      오른쪽 버튼을 눌러서 검사 버튼 누르면 자세하게 확인 가능.<br>
+    </p>
+    <p style="margin-top:40px">
+      <h3 style="display:inline;">< grid ></h3>
+      <a href="grid.html" id="ref"> 참고 - css grid</a><br><br>
+      // grid-template-columns는 열에서 분할하며 여기선 2:1 비율<br>
+      display: grid, grid-template-columns: 2fr 1fr;<br>
+      화면 전체를 사용하도록 자동적으로 조정되는 단위가 fr.<br>
+      div 태그로 묶어준 후에 id값을 부여하여 grid를 적용한다.<br>
+      ** ol 태그에 효과를 적용하는 경우, 본문에서도 ol 태그를 사용할 수도 있기 때문에<br>
+      style을 적용할 때, #grid ol{} 이런 식으로, id="grid" 아래에 있는 ol태그에 대해서<br>
+      어떤 디자인을 적용하겠다는 식으로 작성하기<br>
+      <a href="caniuse.com" id="ref">caniuse.com</a>: 웹브라우저별로 해당 기술 사용 가능한지 조회하는 사이트<br>
+      -> 초록색은 지원 가능, 진한 노랑은 부분 지원, 빨간색은 지원 불가<br>
+    </p>
+  </div>
+  </div>
 </body>
 </html>

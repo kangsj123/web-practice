@@ -7,18 +7,22 @@
     /*
     id 선택자
     */
-    #active{
-      color:red;
-    }
     #ref{
       color:blue;
     }
+    #grid{
+      display:grid;
+      grid-template-columns: 150px 1fr;
+    }
+    #article{
+      padding-left: 25px;
+    }
     /*
     class 선택자
-    */
     .saw{
       color:gray;
     }
+    */
     /*
     tag 선택자
     */
@@ -29,26 +33,43 @@
     h1{
       font-size: 45px;
       text-align: center;
+      border-bottom:1px solid gray;
+      margin:0;
+      padding:20px;
+    }
+    #grid ol{
+      border-right:1px solid gray;
+      width:100px;
+      margin:0;
+      padding:20px;
+      padding-left:33px;
+    }
+    body{
+      margin:0;
     }
   </style>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <ol>
-    <li><a href="1.html" class="saw">HTML</a></li>
-    <li><a href="2.html" class="saw">CSS</a></li>
-    <li><a href="3.html" id="active">JAVASCRIPT</a></li>
-  </ol>
-  <h2>JAVASCRIPT이란 무엇인가?</h2>
-  <h3><a href="https://www.w3schools.com/js/" target="_blank" title="javascript specification">
-    Javascript</a> is the programming language of HTML and the Web.
-  </h3>
-  <img src="coding.jpg" width="40%">
-  <p style="margin-top:40px">
-  </p>
-  <p style="margin-top:40px">
-  </p>
-  <p style="margin-top:40px">
-  </p>
+  <div id="grid">
+    <ol>
+      <li><a href="1.html">HTML</a></li>
+      <li><a href="2.html">CSS</a></li>
+      <li><a href="3.html">JAVASCRIPT</a></li>
+    </ol>
+  <div id="article">
+    <h2>JAVASCRIPT이란 무엇인가?</h2>
+    <h3><a href="https://www.w3schools.com/js/" target="_blank" title="javascript specification">
+      Javascript</a> is the programming language of HTML and the Web.
+    </h3>
+    <img src="coding.jpg" width="40%">
+    <p style="margin-top:40px">
+    </p>
+    <p style="margin-top:40px">
+    </p>
+    <p style="margin-top:40px">
+    </p>
+  </div>
+  </div>
 </body>
 </html>
