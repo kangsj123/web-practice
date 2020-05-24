@@ -6,5 +6,5 @@ studying web
 - [ ] javascript  
 - [ ] node js  
 - [ ] react
-- [ ] spring 
- note : https://kangsj123.github.io/web-practice/
+- [ ] spring  
+ note : https://kangsj123.github.io/web-practice/ (추후 수정할 예정)
