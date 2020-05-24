@@ -117,6 +117,65 @@
       no. 캐시를 통해 한 번 다운로드 받은 파일은 컴퓨터에 저장해두었다가 필요할 때 다시 가져온다. <br>
       저장된 결과를 가져오기 때문에 속도도 빠르고, 트래픽 사용료도 훨씬 적게 낼 수 있다.<br>
     </p>
+    <p>
+      kakao 클론 코딩하면서 정리해두어야 할 부분<br>
+      css에서 효과 지정할 때, 클래스 접근 방법 팁 .(클래스명) .(클래스명) 이런 경우와 .(클래스명).(클래스명)의 차이<br><br>
+
+      kakao 클론 코딩하면서 느낀 점<br>
+      효과를 적게 지정하면서 선택자의 재사용성을 높이기 위해서는 최대한 가장 넓은 범위에 적용하고, <br>
+      우선순위가 높을 수록 더 많은 .(클래스명) 경로를 포함할 수 있도록 한다. <br>
+      클래스 명을 지정할 때 주의하여 재사용성이 높은 클래스는 좀 더 포괄적인 이름으로 설정한다던가의 계획이 필요할 것.<br>
+      그리고, body에 효과를 지정한다면, body에 margin:10px를 지정하면 그게 모든 페이지에 다 적용될만한 것인지 생각해보기<br><br>
+      trouble shooting<br>
+      div를 사용하였는데 제대로 다음 div로 구간이 넘어가지 않고 겹치는 경우 발생!<br>
+      이는 태그 중에 제대로 짝이 맞지 않거나, position을 지정할때 absolute가 아닌, relative로 바꿔보거나 등등으로 해봐야 한다. <br>
+      icon은 <a href="https://fontawesome.com/v4.7.0/icons/">여기</>에서 가져와서 사용 가능하다. <br>
+      여러가지 효과<br>
+      <ul class="tag-list">
+        <li class="tag-list-name">
+          width, height: 100%, 10px;
+        </li>
+        <li class="tag-list-name">
+          color: inherit, background-color: #afafaf(rgb값이 모두 같으면 회색계열)<br>
+          background-color: rgba(0, 0, 0, 0.6);(투명도까지 조절가능하지만 chrome에서만 실행되는 걸로 알고있음)
+        </li>
+        <li class="tag-list-name">
+          font-size, font-weight,
+        </li>
+        <li class="tag-list-name">
+          display: none, block, inline, inline-block, flex;
+        </li>
+        <li class="tag-list-name">
+          justify-content: center, space-between, flex-start;
+        </li>
+        <li class="tag-list-name">
+          flex-direction: column;
+        </li>
+        <li class="tag-list-name">
+          text-align: center;<br>
+          text-shadow: -2px 0 #00b300, 0 2px #00b300, 2px 0 #00b300, 0 -2px #00b300;<br>
+        </li>
+        <li class="tag-list-name">
+          list-style: none;
+        </li>
+        <li class="tag-list-name">
+          border(border-top, border-left, border-right, border-bottom), border-radius: 50%(circle),
+        </li>
+        <li class="tag-list-name">
+          position: relative, fixed, absolute,<br>
+          top, right, left, bottom을 기준으로
+        </li>
+        <li class="tag-list-name">
+          cursor: pointer
+        </li>
+        <li class="tag-list-name">
+          opacity: 0.8;
+        </li>
+        <li class="tag-list-name">
+          z-index:
+        </li>
+      </ul>
+    </p>
   </div>
   </div>
 </body>
