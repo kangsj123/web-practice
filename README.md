@@ -2,7 +2,7 @@
 studying web 
 - [x] html  
 - [x] css(~5/16)  
-- [ ] kakao clone coding(ing)
+- [x] kakao clone coding(~5/24)
 - [ ] javascript  
 - [ ] node js  
 - [ ] react
