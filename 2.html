@@ -8,12 +8,16 @@
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <input type="button" value="night" onclick="
-  document.querySelector('body').style.backgroundColor = 'black';
-  document.querySelector('body').style.color = 'white';
-  ">
-  <input type="button" value="day" onclick="
-  document.querySelector('body').style.backgroundColor = 'white';
-  document.querySelector('body').style.color = 'black';
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day';
+    } else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+    }
   ">
   <div id="grid">
   <ol>
@@ -138,7 +142,7 @@
       trouble shooting<br>
       div를 사용하였는데 제대로 다음 div로 구간이 넘어가지 않고 겹치는 경우 발생!<br>
       이는 태그 중에 제대로 짝이 맞지 않거나, position을 지정할때 absolute가 아닌, relative로 바꿔보거나 등등으로 해봐야 한다. <br>
-      icon은 <a href="https://fontawesome.com/v4.7.0/icons/">여기</>에서 가져와서 사용 가능하다. <br>
+      icon은 <a href="https://fontawesome.com/v4.7.0/icons/">여기</a> 에서 가져와서 사용 가능하다. <br>
       여러가지 효과<br>
       <ul class="tag-list">
         <li class="tag-list-name">
@@ -187,5 +191,17 @@
     </p>
   </div>
   </div>
+  <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value = 'day';
+    } else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+    }
+  ">
 </body>
 </html>
