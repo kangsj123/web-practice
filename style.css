@@ -21,7 +21,7 @@ class 선택자
 tag 선택자
 */
 a {
-  color:black;
+  color:blue;
   text-decoration: none;
 }
 h1{
@@ -30,6 +30,9 @@ h1{
   border-bottom: 1px solid gray;
   margin:0;
   padding:20px;
+}
+input{
+  margin: 10px 0px 10px 5px;
 }
 #grid ol{
   border-right: 1px solid gray;

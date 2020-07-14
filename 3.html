@@ -7,6 +7,25 @@
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
+  <input type="button" value="night" onclick="
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  ">
+  <input type="button" value="day" onclick="
+  document.querySelector('body').style.backgroundColor = 'white';
+  document.querySelector('body').style.color = 'black';
+  ">
+  <input id="night_day" type="button" value="night" onclick="
+    if(document.querySelector('#night_day').value === 'night'){
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white';
+      document.querySelector('#night_day').value = 'day';
+    } else{
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+      document.querySelector('#night_day').value = 'night';
+    }
+  ">
   <div id="grid">
     <ol>
       <li><a href="1.html">HTML</a></li>
@@ -21,7 +40,7 @@
     <img src="coding.jpg" width="40%">
     <p style="margin-top:40px">
       자바스크립트는 사용자와 상호작용하는 언어이고, 자바스크립트 코드에 따라 태그의 디자인을 바꾸어 준다.<br>
-      자바스크립트는 html을 제어하는 언어이다. <br>
+      자바스크립트는 html을 제어하는 언어이다. html은 한번 선택하면 바뀌지 않는 정적인 언어. <br>
       script 태그 안쪽의 코드를 javascript로 인식한다.
       예제) <a href="ex1.html">ex1</a> <br>
       onclick 속성 예제) <a href="ex2.html">ex2</a><br>
@@ -56,6 +75,11 @@
       var a = 1 -> 이렇게 var을 써준다.<br>
       1 = 2 (error!)<br>
       변수를 사용하는 이유: 바꾸어야하는 부분을 하나로 통일하여 한 번에 바꿀 수 있다.<br>
+    </p>
+    <p style="margin-top:40px">
+      document.querySelector('body')//tag<br>
+      document.querySelector('.myclass')//class<br>
+      document.querySelector('#idname')//id<br>
     </p>
   </div>
   </div>
