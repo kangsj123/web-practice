@@ -13,10 +13,24 @@
       target.style.backgroundColor = 'black';
       target.style.color = 'white';
       this.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i<alist.length){
+        alist[i].style.color = 'powderblue';
+        i++;
+      }
     } else{
       target.style.backgroundColor = 'white';
       target.style.color = 'black';
       this.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i<alist.length){
+        alist[i].style.color = 'blue';
+        i++;
+      }
     }
   ">
   <div id="grid">
@@ -74,6 +88,27 @@
       document.querySelector('.myclass')//class<br>
       document.querySelector('#idname')//id<br>
     </p>
+    <p style="margin-top:40px">
+      querySelector는 해당 코드가 처음 등장하는 부분만 가져온다.<br>
+      document.querySelector('a') 는 a태그가 가장 먼저 등장하는 부분 한 개만 가져온다.<br>
+      모든 부분을 가져오고 싶다면? <br>
+      검색어: javascript get element by css selector multiple -> javascript querySelectorAll 검색<br>
+    </p>
+    <p style="margin-top:40px">
+      비교 연산 <a href="ex3.html">ex3</a>
+    </p>
+    <p style="margin-top:40px">
+      조건문 <a href="ex4.html">ex4</a>
+    </p>
+    <p style="margin-top:40px">
+      배열 <a href="ex5.html">ex5</a>
+    </p>
+    <p style="margin-top:40px">
+      반복문 <a href="ex6.html">ex6</a>
+    </p>
+    <p style="margin-top:40px">
+      반복문과 배열 활용 <a href="ex7.html">ex7</a>
+    </p>
   </div>
   </div>
   <input type="button" value="night" onclick="
@@ -82,10 +117,24 @@
       target.style.backgroundColor = 'black';
       target.style.color = 'white';
       this.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i<alist.length){
+        alist[i].style.color = 'powderblue';
+        i++;
+      }
     } else{
       target.style.backgroundColor = 'white';
       target.style.color = 'black';
       this.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i<alist.length){
+        alist[i].style.color = 'blue';
+        i++;
+      }
     }
   ">
 </body>
