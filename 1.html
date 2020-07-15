@@ -4,34 +4,39 @@
   <title>WEB1 - html</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script>
+  function nightDayHandler(self){
+    var target = document.querySelector('body');
+    if(self.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      self.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i<alist.length){
+        alist[i].style.color = 'powderblue';
+        i++;
+      }
+    } else{
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      self.value = 'night';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i<alist.length){
+        alist[i].style.color = 'blue';
+        i++;
+      }
+    }
+  }
+  </script>
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <input type="button" value="night" onclick="
-      var target = document.querySelector('body');
-      if(this.value === 'night'){
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        this.value = 'day';
-
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i<alist.length){
-          alist[i].style.color = 'powderblue';
-          i++;
-        }
-      } else{
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        this.value = 'night';
-
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i<alist.length){
-          alist[i].style.color = 'blue';
-          i++;
-        }
-      }
+      nightDayHandler(this);
     ">
     <div id="grid">
     <ol>
@@ -82,30 +87,7 @@
     </div>
   </div>
   <input type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value = 'day';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i<alist.length){
-        alist[i].style.color = 'powderblue';
-        i++;
-      }
-    } else{
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i<alist.length){
-        alist[i].style.color = 'blue';
-        i++;
-      }
-    }
+    nightDayHandler(this);
   ">
 </body>
 </html>
