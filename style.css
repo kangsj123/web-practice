@@ -44,6 +44,9 @@ input{
 body{
   margin:0;
 }
+p{
+  margin-top: 40px;
+}
 @media(max-width:800px){
   #grid{
     display:block;

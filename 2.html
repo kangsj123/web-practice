@@ -4,34 +4,7 @@
   <title>WEB1 - css</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <script>
-  function nightDayHandler(self){
-    var target = document.querySelector('body');
-    if(self.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      self.value = 'day';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i<alist.length){
-        alist[i].style.color = 'powderblue';
-        i++;
-      }
-    } else{
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      self.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i<alist.length){
-        alist[i].style.color = 'blue';
-        i++;
-      }
-    }
-  }
-  </script>
+  <script src="colors.js"></script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
@@ -59,7 +32,7 @@
       CSS describes how HTML elements should be displayed.
     </h3>
     <img src="coding.jpg" width="40%">
-    <p style="margin-top:40px">
+    <p>
       css : html과 분리된, 디자인에 관여하는 것.<br>
       <h4>1. style tag 안에 css 문법을 넣어준다.</h4>
       -> font로 각 글자의 색깔을 표현하는 대신, 헤드의 style 태그 안에 해당 태그 부분의 스타일을 지정하여 표현한다. <br>
@@ -93,7 +66,7 @@
       -> 이 문서에서는 유일무이한 값. 따라서 a 태그와 같이 상대적으로 포괄적인 값에 비해 훨씬 구체적이고 범위가 좁다.<br>
       범위가 좁을 수록 더 우선순위가 높다고 기억하기**<br><br>
     </p>
-    <p style="margin-top:40px">
+    <p>
       <h3 style="display:inline;">< box model ></h3>
       <a href="box.html" id="ref"> 참고 - css box model</a><br><br>
       <strong>1. block level element(==tag)</strong><br>
@@ -116,7 +89,7 @@
 
       오른쪽 버튼을 눌러서 검사 버튼 누르면 자세하게 확인 가능.<br>
     </p>
-    <p style="margin-top:40px">
+    <p>
       <h3 style="display:inline;">< grid ></h3>
       <a href="grid.html" id="ref"> 참고 - css grid</a><br><br>
       // grid-template-columns는 열에서 분할하며 여기선 2:1 비율<br>
@@ -129,7 +102,7 @@
       <a href="caniuse.com" id="ref">caniuse.com</a>: 웹브라우저별로 해당 기술 사용 가능한지 조회하는 사이트<br>
       -> 초록색은 지원 가능, 진한 노랑은 부분 지원, 빨간색은 지원 불가<br>
     </p>
-    <p style="margin-top:40px">
+    <p>
       <h3 style="display:inline;">< 반응형 디자인 ></h3>
       <a href="mediaquery.html" id="ref"> 참고 - css mediaquery</a><br><br>
       반응형 디자인이란, 화면의 크기에 따라서 웹페이지의 각 요소들이 반응해서 최적화된 모양으로 바뀌게 하는 것<br>
@@ -138,7 +111,7 @@
       @media(max-width:800px){} //width가 800px 이하일 때, 어떤 효과를 적용할 것인지 명시<br>
       @media(min-width:800px){} //width가 800px 이상일 때, 어떤 효과를 적용할 것인지 명시<br>
     </p>
-    <p style="margin-top:40px">
+    <p>
       <h3 style="display:inline;">< 코드의 재사용성 ></h3>
       각 html 파일마다 css 코드를 넣으면 웹페이지를 하나 추가하거나, css 코드를 수정할 때,<br>
       많은 시간이 걸리고 비효율적인 작업이 반복된다.<br>

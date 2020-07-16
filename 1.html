@@ -4,34 +4,7 @@
   <title>WEB1 - html</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <script>
-  function nightDayHandler(self){
-    var target = document.querySelector('body');
-    if(self.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      self.value = 'day';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i<alist.length){
-        alist[i].style.color = 'powderblue';
-        i++;
-      }
-    } else{
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      self.value = 'night';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i<alist.length){
-        alist[i].style.color = 'blue';
-        i++;
-      }
-    }
-  }
-  </script>
+  <script src="colors.js"></script>
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
@@ -51,7 +24,7 @@
       <strong>creating <u>web</u> pages and web applications.</strong>
     </h3>
     <img src="coding.jpg" width="40%">
-    <p style="margin-top:40px">
+    <p>
       <strong id="ref">1. tag</strong> : like strong, /strong covered in brackets<br>
       strong tag : to mark as bold<br>
       underline tag : to make words underlined<br>
@@ -64,10 +37,10 @@
       ol tag : numbering each list. It is the parent tag of li. = ordered list<br>
       a tag : 가장 대표적인 태그. 이 태그 덕분에 웹페이지를 발견하고 최고의 검색 결과를 만들 수 있다. link(hypertext)를 위한 태그 = anchor<br>
     </p>
-    <p style="margin-top:40px">
+    <p>
       <strong id="ref">2. attribute</strong> : like src, width to give more information in tag
     </p>
-    <p style="margin-top:40px">
+    <p>
       <strong id="ref">3. structure</strong><br>
       <strong>!doctype</strong><br>
       <strong>html</strong><br>
@@ -79,7 +52,7 @@
       <strong>/body</strong><br>
       <strong>/html</strong><br>
     </p>
-    <p style="margin-top:40px">
+    <p>
       kakao 클론 코딩하면서 정리해두어야 할 부분 <br>
       html5의 문법 -> 화면을 구성할때 쓰이는 태그 등(header, main, nav 등)<br>
       class 명명 방식 -> BEM 및 다른 방식<br>
