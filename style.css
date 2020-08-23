@@ -24,6 +24,9 @@ a {
   color:blue;
   text-decoration: none;
 }
+div{
+  margin: 20px 0px 20px 0px;
+}
 h1{
   font-size: 45px;
   text-align: center;
