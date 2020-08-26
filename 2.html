@@ -8,15 +8,36 @@
   <script src="colors.js"></script>
 </head>
 <body>
-  <h1><a href="index.html">WEB</a></h1>
+  <div class="nav">
+    <h1><a href="index.html">WEB practice</a></h1>
+    <span class="nav__items">
+      <span class="item">
+        <a href="1.html">HTML</a>
+      </span>
+      <span class="item">
+        <a href="2.html">CSS</a>
+      </span>
+      <span class="item">
+        <a href="3.html">JAVASCRIPT</a>
+      </span>
+    </span>
+  </div>
   <input type="button" value="night" onclick="
     nightDayHandler(this);
   ">
   <div id="grid">
   <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JAVASCRIPT</a></li>
+    <li><a href="#index1">1. 용어</a></li>
+    <li><a href="#index2">2. CSS 적용하는 방법</a></li>
+    <li><a href="#index3">3. box model</a></li>
+    <li><a href="#index4">4. grid</a></li>
+    <li><a href="#index5">5. 선택자</a></li>
+    <li><a href="#index6">6. 반응형 디자인</a></li>
+    <li><a href="#index7">7. 여러가지 효과</a></li>
+    <li><a href="#index8">8. kakao 클론 코딩</a></li>
+    <li><a href="#index9">9. 유용한 사이트</a></li>
+    
+    
   </ol>
   <div id="article">
     <h2>CSS</h2>
@@ -28,16 +49,16 @@
     <p>
       <h3><기초 개념></h3>
       <p>
-        <h4>1. 용어</h4>
+        <h4 id="index1">1. 용어</h4>
         <div>
-          - selector 선택자:
-          - declaration 효과:
-          - property 속성:
+          - selector 선택자: 어떤 부분에 css를 적용할지 명시<br>
+          - declaration 효과: 선택자 안에 적용할 스타일을 명시하는 것. ex. color:red<br>
+          - property 속성: 'color: red'에서 color를 가리킴. red는 property value.<br>
         </div>
       </p>
       <p>
-        <h4>2. CSS 적용하는 방법</h4>
-        잘 안쓰는 방식도 있지만 가능한 모든 방식을 나열해보았다.<br><br>
+        <h4 id="index2">2. CSS 적용하는 방법</h4>
+        잘 안쓰는 방식도 있지만 가능한 모든 방식을 나열해보았다.<br>
         <div>
           <b>1) style tag 안에 css 문법을 넣어준다.<br></b>
           head tag의 style tag 안에 스타일을 지정하여 표현한다. <br>
@@ -82,7 +103,7 @@
         </div>
       </p>
       <p>
-        <h3>3. box model</h3>
+        <h4 id="index3">3. box model</h4>
         <a href="box.html" id="ref"> 참고 - css box model</a><br><br>
         <strong>1. block level element(==tag)</strong><br>
         - h1 tag, div tag, ol tag의 경우, 한 줄을 차지한다.<br><br>
@@ -100,7 +121,7 @@
         마우스 오른쪽 -> 검사 클릭 자세하게 확인 가능.<br>
       </p>
       <p>
-        <h3>4. grid</h3>
+        <h4 id="index4">4. grid</h4>
         <a href="grid.html" id="ref"> 참고 - css grid</a><br><br>
         // grid-template-columns는 열에서 분할하며 아래는 2:1 비율<br>
         <pre>
@@ -113,7 +134,7 @@
         -> id="grid" 아래에 있는 ol태그에 대해서 어떤 디자인을 적용하겠다는 뜻<br>
       </p>
       <p>
-        <h3>5. 선택자</h3>
+        <h4 id="index5">5. 선택자</h4>
         <b>1) class 선택자</b><br>
         - 원하는 태그에 class 속성을 추가하여 class 이름을 지정해준다.<br>
         - .(class 이름){}를 적어서 효과를 지정한다.<br>
@@ -134,7 +155,7 @@
         - 범위가 좁을 수록 더 우선순위가 높다고 기억하기**<br>
       </p>
       <p>
-        <h3>6. 반응형 디자인</h3>
+        <h4 id="index6">6. 반응형 디자인</h4>
         <a href="mediaquery.html" id="ref"> 참고 - css mediaquery</a><br><br>
         반응형 디자인이란, 화면의 크기에 따라서 웹페이지의 각 요소들이 반응해서 최적화된 모양으로 바뀌게 하는 것<br>
         -> Responsive web<br>
@@ -143,7 +164,7 @@
         @media(min-width:800px){} //width가 800px 이상일 때, 어떤 효과를 적용할 것인지 명시<br>
       </p>
       <p>
-        <h3 style="display:inline;">7. 여러가지 효과 </h3><br>
+        <h4 id="index2">7. 여러가지 효과</h4>
         <ul class="tag-list">
           <li class="tag-list-name">
             <b>display</b><br>
@@ -200,7 +221,7 @@
         </ul>
       </p>
       <p>
-        <h3 style="display:inline;">8. kakao 클론 코딩</h3><br>
+        <h4 id="index8">8. kakao 클론 코딩</h4>
         css에서 효과 지정할 때, 클래스 접근 방법 팁 .(클래스명) .(클래스명) 이런 경우와 .(클래스명).(클래스명)의 차이<br><br>
 
         <b>느낀 점</b><br>
@@ -214,7 +235,7 @@
         이는 태그 중에 제대로 짝이 맞지 않거나, position을 지정할때 absolute가 아닌, relative로 바꿔보거나 등등으로 해봐야 한다.<br><br>
       </p>
       <p>
-        <h3 style="display:inline;">9. 유용한 사이트 </h3><br><br>
+        <h4 id="index9">9. 유용한 사이트 </h4>
         <a href="https://caniuse.com" id="ref"><b>caniuse.com</b></a><br>
         - 웹브라우저별로 해당 기술 사용 가능한지 조회하는 사이트<br>
         - 초록 지원 가능, 노랑 부분 지원, 빨강 지원 불가<br><br>
