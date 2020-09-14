@@ -8,22 +8,18 @@ id 선택자
 #article{
   padding-left: 25px;
 }
+#grid ol{
+  border-right: 2px solid rgb(208, 236, 130);
+  margin:0;
+  padding:20px;
+  padding-left:20px;
+  list-style: none;
+}
 /*
 class 선택자
-.saw{
-  color:gray;
-}
 */
-/*
-tag 선택자
-*/
-
 .nav__list{
   color: white;
-}
-a {
-  color:rgb(194, 78, 24);
-  text-decoration: none;
 }
 .nav {
   display: flex;
@@ -32,6 +28,9 @@ a {
   background-color: rgb(208, 236, 130);
   padding: 20px 40px;
   margin: 0;
+}
+.item :hover{
+  color: white;
 }
 .nav .nav__items{
   width: 300px;
@@ -47,25 +46,32 @@ a {
 .nav a{
   color: rgb(37, 120, 145);
 }
+/*
+tag 선택자
+*/
+body{
+  margin:0;
+  background-color: white;
+}
+p{
+  margin-top: 40px;
+}
+a {
+  color:rgb(37, 120, 145);
+  text-decoration: none;
+}
 div{
   margin: 20px 0px 20px 0px;
 }
 input{
   margin: 10px 0px 10px 5px;
 }
-#grid ol{
-  border-right: 2px solid orange;
-  margin:0;
-  padding:20px;
-  padding-left:20px;
-  list-style: none;
+#grid li :hover{
+  background-color: rgb(208, 236, 130);
 }
-body{
-  margin:0;
-  background-color: rgb(255, 250, 187);
-}
-p{
-  margin-top: 40px;
+#grid li{
+  width: 100%;
+  padding: 10px 0px;
 }
 @media(max-width:800px){
   #grid{
