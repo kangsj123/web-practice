@@ -1,0 +1,199 @@
+<p>
+    <h3><기초 개념></h3>
+    <p>
+        <h4 id="index1">1. 용어</h4>
+        <div>
+            - selector 선택자: 어떤 부분에 css를 적용할지 명시<br>
+            - declaration 효과: 선택자 안에 적용할 스타일을 명시하는 것. ex. color:red<br>
+            - property 속성: 'color: red'에서 color를 가리킴. red는 property value.<br>
+        </div>
+    </p>
+    <p>
+        <h4 id="index2">2. CSS 적용하는 방법</h4>
+        잘 안쓰는 방식도 있지만 가능한 모든 방식을 나열해보았다.<br>
+        <div>
+            <b>1) style tag 안에 css 문법을 넣어준다.<br></b>
+            head tag의 style tag 안에 스타일을 지정하여 표현한다. <br>
+            <pre>
+            &lt;head>
+                &lt;style>
+                a{
+                    color: red;
+                    width: 10px;
+                }
+                &lt;/style>
+            &lt;/head>
+            </pre>
+            <b>얻는 효과)</b><br>
+            - 중복 제거, html을 이용하여 디자인하는 것보다 훨씬 효과적.<br>
+            - 디자인과 관련된 태그를 따로 분리함으로써 정보만을 가지고 있는 코드를 분석하기가 용이하다.<br>
+        </div>
+        <div>
+            <b>2) style 속성을 이용한다.</b><br>
+            디자인을 지정하려는 태그 부분에 속성 style을 넣어 값을 지정한다.<br>
+            style 부분은 html의 속성이며 그 값으로 css의 효과가 들어온다.<br><br>
+            ex.
+            <pre>
+            &lt;a style-"color:red">
+            </pre>
+            웹브라우저는 css의 문법에 따라 해석해서 그 결과를 style 속성이 위치하고 있는 태그에 적용할 것.<br>
+            head 안의 style에 해당 태그에 모두 적용한 후 그 중 하나의 코드에만 다른 css 효과를 적용할때 쓰인다.<br>
+        </div>
+        <div>
+            <b>3) .css 파일을 따로 생성한다.</b><br>
+            코드의 재사용성을 높이는 방식!<br>
+            원하는 태그에 class 속성을 추가하여 class 이름을 지정해준다.<br>
+            그리고 아래와 같이 해당 html파일의 head안에 해당 css파일을 추가해준다.<br>
+            <pre>
+            &lt;link rel="stylesheet" href="style.css">
+            </pre>
+            <b>얻는 효과)</b><br>
+            - 중복을 제거해서 재사용성을 높이고 가독성을 높이고 유지보수를 편하게 한다.<br>
+            - 각 웹페이지를 로드할 때마다 style.css 파일을 다운로드하게 되므로 트래픽이 많이 사용되지 않나? no!<br>
+            -> 캐시를 통해 한 번 다운로드 받은 파일은 컴퓨터에 저장해두었다가 필요할 때 다시 가져온다. <br>
+            저장된 결과를 가져오기 때문에 속도도 빠르고, 트래픽 사용료도 훨씬 적게 낼 수 있다.<br>
+        </div>
+    </p>
+    <p>
+        <h4 id="index3">3. box model</h4>
+        <a href="box.html" id="ref"> 참고 - css box model</a><br><br>
+        <strong>1. block level element(==tag)</strong><br>
+        - h1 tag, div tag, ol tag의 경우, 한 줄을 차지한다.<br><br>
+
+        <strong>2. inline level element</strong><br>
+        - a tag, span tag의 경우, 글자 만큼의 자리를 차지한다.<br><br>
+
+        border-width, border-color와 같이 border가 반복되는 경우, border:5px solid red<br>
+        로 순서에 상관없이 나열하면 된다.<br><br>
+
+        padding: box와 컨텐츠의 여백을 주기 위해 사용.<br>
+        margin: 테두리와 테두리 사이 간격 지정할 때 사용.<br>
+        기본 태그로 div(block level), span(inline level) 태그 사용 가능.<br><br>
+
+        마우스 오른쪽 -> 검사 클릭 자세하게 확인 가능.<br>
+    </p>
+    <p>
+        <h4 id="index4">4. grid</h4>
+        <a href="grid.html" id="ref"> 참고 - css grid</a><br><br>
+        // grid-template-columns는 열에서 분할하며 아래는 2:1 비율<br>
+        <pre>
+            display: grid, grid-template-columns: 2fr 1fr;
+        </pre>
+        - fr: 화면 전체를 사용하도록 자동적으로 조정되는 단위<br>
+        - div 태그로 묶어준 후에 id값을 부여하여 grid를 적용한다.<br><br>
+        **참고<br>
+        태그에 효과를 적용할 때, 다른 곳에서도 ol 태그를 사용할 수 있기 때문에 #grid ol{} 등으로 작성 <br>
+        -> id="grid" 아래에 있는 ol태그에 대해서 어떤 디자인을 적용하겠다는 뜻<br>
+    </p>
+    <p>
+        <h4 id="index5">5. 선택자</h4>
+        <b>1) class 선택자</b><br>
+        - 원하는 태그에 class 속성을 추가하여 class 이름을 지정해준다.<br>
+        - .(class 이름){}를 적어서 효과를 지정한다.<br>
+        - 해당 클래스 내에서도 특정 태그는 다른 효과를 적용하고 싶다면 class="class1 class2"로 지정하여<br>
+        &nbsp&nbsp head에 다른 효과를 지정해서 명시해주면 된다.<br><br>
+
+        <b>2) id 선택자</b><br>
+        - head 안에 #(id이름){}으로 효과를 지정<br>
+        - 구체적인 예외처리를 할때 사용하는 경우가 많다.<br>
+        - id 선택자 이름은 한 번이라도 사용된 경우, 중복되어 더 이상 등장할 수 없다.<br>
+        -> 이 문서에서는 유일무이한 값.<br>
+        따라서 a 태그와 같이 상대적으로 포괄적인 값에 비해 훨씬 구체적이고 범위가 좁다.<br><br>
+
+        <b>3) 선택자 우선순위</b><br><br>
+        <strong style="color: orange">태그 선택자 < 클래스 선택자 < 아이디 선택자</strong><br><br>
+
+        - 같은 선택자인 경우 아래에 있을수록, 더 가까울수록 우선순위가 높다.<br>
+        - 범위가 좁을 수록 더 우선순위가 높다고 기억하기**<br>
+    </p>
+    <p>
+        <h4 id="index6">6. 반응형 디자인</h4>
+        <a href="mediaquery.html" id="ref"> 참고 - css mediaquery</a><br><br>
+        반응형 디자인이란, 화면의 크기에 따라서 웹페이지의 각 요소들이 반응해서 최적화된 모양으로 바뀌게 하는 것<br>
+        -> Responsive web<br>
+        미디어 쿼리를 이용해서 head의 style부분에 아래와 같이 표기<br>
+        @media(max-width:800px){} //width가 800px 이하일 때, 어떤 효과를 적용할 것인지 명시<br>
+        @media(min-width:800px){} //width가 800px 이상일 때, 어떤 효과를 적용할 것인지 명시<br>
+    </p>
+    <p>
+        <h4 id="index2">7. 여러가지 효과</h4>
+        <ul class="tag-list">
+          <li class="tag-list-name">
+            <b>display</b><br>
+            - none, block, inline, inline-block, flex;<br>
+            - block은 block level로 한 줄에 하나씩 차지하도록 나타내어준다.<br>
+            - inline은 inline level로 컨텐츠의 크기만큼 차지하도록 나타내어준다.<br>
+            - inline-block은 block인데 한줄에 여러개가 들어가도록 나타내어준다.<br>
+            - flex는 flexbox로 나타내어준다.<br>
+          </li>
+          <li class="tag-list-name">
+            <b>flexbox</b>
+            container안에 여러 item들을 나열하는 방식을 지정하는 것.<br>
+            container에 관여하는 속성과 item을 관여하는 많은 속성이 있음. 아래 사이트 참고.<br>
+            flex box는 main axis와 cross axis로 나누어 속성을 지정할 수 있음<br>
+            - main이 수평 방향이면 cross는 수직 방향<br>
+            - main이 수직 방향이면 cross는 수평 방향<br>
+          </li>
+          <li class="tag-list-name">
+            <b>position</b><br> relative, fixed, absolute, sticky(스크롤해도 화면에서 사라지지않음)<br>
+            - 기본값은 static. <br>
+            - top, right, left, bottom을 기준으로<br>
+            - relative는 현재 위치에서 상대적으로 움직임<br>
+            - fixed는 전체 화면(윈도우)에서 움직임<br>
+            - absolute는 현재 아이템이 담겨있는 box의 위치에서 움직임<br>
+          </li>
+          <li class="tag-list-name">
+            width, height: 100%, 10px;
+          </li>
+          <li class="tag-list-name">
+            color: inherit, background-color: #afafaf(rgb값이 모두 같으면 회색계열)<br>
+            background-color: rgba(0, 0, 0, 0.6);(투명도까지 조절가능하지만 chrome에서만 실행되는 걸로 알고있음)
+          </li>
+          <li class="tag-list-name">
+            font-size, font-weight,
+          </li>
+          <li class="tag-list-name">
+            text-shadow: -2px 0 #00b300, 0 2px #00b300, 2px 0 #00b300, 0 -2px #00b300;<br>
+          </li>
+          <li class="tag-list-name">
+            list-style: none;
+          </li>
+          <li class="tag-list-name">
+            border(border-top, border-left, border-right, border-bottom), border-radius: 50%(circle),
+          </li>
+          <li class="tag-list-name">
+            cursor: pointer
+          </li>
+          <li class="tag-list-name">
+            opacity: 0.8;
+          </li>
+          <li class="tag-list-name">
+            z-index
+          </li>
+        </ul>
+    </p>
+    <p>
+        <h4 id="index8">8. kakao 클론 코딩</h4>
+        css에서 효과 지정할 때, 클래스 접근 방법 팁 .(클래스명) .(클래스명) 이런 경우와 .(클래스명).(클래스명)의 차이<br><br>
+
+        <b>느낀 점</b><br>
+        효과를 적게 지정하면서 선택자의 재사용성을 높이기 위해서는 최대한 가장 넓은 범위에 적용하고, <br>
+        우선순위가 높을 수록 더 많은 .(클래스명) 경로를 포함할 수 있도록 한다. <br>
+        클래스 명을 지정할 때 주의하여 재사용성이 높은 클래스는 좀 더 포괄적인 이름으로 설정한다던가의 계획이 필요할 것.<br>
+        body에 효과를 지정한다면, body에 margin:10px를 지정하면 그게 모든 페이지에 다 적용될만한 것인지 생각해보기<br><br>
+
+        <b>trouble shooting</b><br>
+        div를 사용하였는데 제대로 다음 div로 구간이 넘어가지 않고 겹치는 경우 발생!<br>
+        이는 태그 중에 제대로 짝이 맞지 않거나, position을 지정할때 absolute가 아닌, relative로 바꿔보거나 등등으로 해봐야 한다.<br><br>
+    </p>
+    <p>
+        <h4 id="index9">9. 유용한 사이트 </h4>
+        <a href="https://caniuse.com" id="ref"><b>caniuse.com</b></a><br>
+        - 웹브라우저별로 해당 기술 사용 가능한지 조회하는 사이트<br>
+        - 초록 지원 가능, 노랑 부분 지원, 빨강 지원 불가<br><br>
+        <a href = "https://css-tricks.com/snippets/css/a-guide-to-flexbox/" id="ref"><b>flexbox 찾아보는 사이트</b></a><br><br>
+        <a href = "https://flukeout.github.io/" id="ref"><b>selector 익힐 수 있는 게임</b></a><br><br>
+        <a href = "https://flexboxfroggy.com/#ko" id="ref"><b>flexbox 익힐 수 있는 게임</b></a><br><br>
+        <a href = "https://fontawesome.com/v4.7.0/icons/" id="ref"><b>아이콘 가져오는 사이트</b></a> <br><br>
+    </p>
+</p>
