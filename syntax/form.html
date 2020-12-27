@@ -1,0 +1,14 @@
+// html의 form은 사용자가 입력하는 큰 틀을 제공하며 입력된 데이터를 한번에 서버로 전송한다  
+// post로 보내야 url내에 변경된 데이터가 표기되지 않는다
+// 이렇게 하지 않으면 submit했을 때, url에 http://localhost:3000/process_create?title=hi&description=hey 로 표기된다
+// --> 외부 사용자가 해당 url로 보내어 데이터를 수정하거나 추가할 위험성이 생긴다. 
+
+<form action="http://localhost:3000/process_create" method="post">
+    <p><input type="text" name="title"></p>
+    <p>
+        <textarea name="description"></textarea>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
