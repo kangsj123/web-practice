@@ -3,64 +3,64 @@ var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 
-function templateHTML(title, list, nav, body, control){
-    return `
-    <!doctype html>
-    <html>
-        <head>
-            <title>WEB - ${title}</title>
-            <meta charset="utf-8">
-            <link rel="stylesheet" href="style.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="colors.js"></script>
-        </head>
-        <body>
-            <div class="nav">
-                <h1><a href="/">WEB</a></h1>
-                ${nav}
-            </div>
-            <input type="button" value="night" onclick="nightDayHandler(this);">
-            <div id="grid">
-                ${list}
-                ${control}
-                ${body}
+var template = {
+    html:function(title, list, nav, body, control){
+        return `
+        <!doctype html>
+        <html>
+            <head>
+                <title>WEB - ${title}</title>
+                <meta charset="utf-8">
+                <link rel="stylesheet" href="style.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="colors.js"></script>
+            </head>
+            <body>
+                <div class="nav">
+                    <h1><a href="/">WEB</a></h1>
+                    ${nav}
                 </div>
-            </div>
-            <input type="button" value="night" onclick="
-                nightDayHandler(this);
-            ">
-        </body>
-    </html>
-    `
-}
-
-function templateList(filelist){
-    var list = '<ol>';
-    var i = 0;
-    while(i < filelist.length){
-        if(filelist[i]!='main'){
-            list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
+                <input type="button" value="night" onclick="nightDayHandler(this);">
+                <div id="grid">
+                    ${list}
+                    ${control}
+                    ${body}
+                    </div>
+                </div>
+                <input type="button" value="night" onclick="
+                    nightDayHandler(this);
+                ">
+            </body>
+        </html>
+        `
+    },
+    list:function(filelist){
+        var list = '<ol>';
+        var i = 0;
+        while(i < filelist.length){
+            if(filelist[i]!='main'){
+                list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
+            }
+            i = i + 1;
         }
-        i = i + 1;
-    }
-    list = list + '</ol>';
-    return list;
-}
-
-function templateNavbar(filelist){
-    var nav = '<span class="nav__items">';
-    var i = 0;
-    while(i<filelist.length){
-        if(filelist[i]!='main'){
-            nav = nav + `<span class = "item">
-                <a href="/?id=${filelist[i]}">${filelist[i]}</a>
-                </span>`;
+        list = list + '</ol>';
+        return list;
+    },
+    navbar:function(filelist){
+        var nav = '<span class="nav__items">';
+        var i = 0;
+        while(i<filelist.length){
+            if(filelist[i]!='main'){
+                nav = nav + `<span class = "item">
+                    <a href="/?id=${filelist[i]}">${filelist[i]}</a>
+                    </span>`;
+            }
+            i = i + 1;
         }
-        i = i + 1;
+        nav = nav + '</span>';
+        return nav;
     }
-    nav = nav + '</span>';
-    return nav;
-}
+};
 
 var app = http.createServer(function(request,response){
     var _url = request.url;
@@ -85,11 +85,11 @@ var app = http.createServer(function(request,response){
         }
         fs.readdir('./data', function(error, filelist){
             fs.readFile(`data/${id}`, 'utf8', function(err, description){
-                var list = templateList(filelist);
-                var nav = templateNavbar(filelist);
-                var template = templateHTML(title, list, nav, `<h2>${title}</h2>${description}`, control);
+                var list = template.list(filelist);
+                var nav = template.navbar(filelist);
+                var html = template.html(title, list, nav, `<h2>${title}</h2>${description}`, control);
                 response.writeHead(200);
-                response.end(template);
+                response.end(html);
             })
         });
     } else if(pathname === '/create'){
@@ -97,9 +97,9 @@ var app = http.createServer(function(request,response){
         title = 'create';
         fs.readdir('./data', function(error, filelist){
             fs.readFile(`data/${id}`, 'utf8', function(err, description){
-                var list = templateList(filelist);
-                var nav = templateNavbar(filelist);
-                var template = templateHTML(title, list, nav, `
+                var list = template.list(filelist);
+                var nav = template.navbar(filelist);
+                var html = template.html(title, list, nav, `
                     <form action="http://localhost:3000/create_process" method="post">
                         <p><input type="text" name="title" placeholder="title"></p>
                         <p>
@@ -111,7 +111,7 @@ var app = http.createServer(function(request,response){
                     </form>
                 `, '');
                 response.writeHead(200);
-                response.end(template);
+                response.end(html);
             })
         });
     } else if(pathname === '/create_process'){
@@ -131,9 +131,9 @@ var app = http.createServer(function(request,response){
     } else if(pathname === '/update'){
         fs.readdir('./data', function(error, filelist){
             fs.readFile(`data/${title}`, 'utf8', function(err, description){
-                var list = templateList(filelist);
-                var nav = templateNavbar(filelist);
-                var template = templateHTML(title, list, nav, 
+                var list = template.list(filelist);
+                var nav = template.navbar(filelist);
+                var html = template.html(title, list, nav, 
                 `
                 <form action="http://localhost:3000/update_process" method="post">
                     <input type="hidden" name="id" value="${title}">
@@ -147,7 +147,7 @@ var app = http.createServer(function(request,response){
                 </form>
                 `, '');
                 response.writeHead(200);
-                response.end(template);
+                response.end(html);
             })
         });
     } else if(pathname === '/update_process'){
