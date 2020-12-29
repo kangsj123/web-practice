@@ -76,7 +76,12 @@ var app = http.createServer(function(request,response){
             title = 'Welcome';
         }
         else{
-            control =  control + `<a href="/update?id=${id}">update</a>`;
+            control =  control + `<a href="/update?id=${id}">update</a> `;
+            control = control + 
+            `<form action="delete_process" method="post">
+                <input type="hidden" name="id" value="${title}">
+                <input type="submit" value="delete">
+            </form>`;
         }
         fs.readdir('./data', function(error, filelist){
             fs.readFile(`data/${id}`, 'utf8', function(err, description){
@@ -162,10 +167,20 @@ var app = http.createServer(function(request,response){
                 })
             });
             console.log(post);
-            // fs.writeFile(`data/${title}`, description, 'utf8', function(err){
-            //     response.writeHead(302, {Location: `/?id=${title}`});
-            //     response.end();
-            // });
+        });
+    }else if(pathname === '/delete_process'){
+        var body = '';
+        request.on('data', function(data){
+            body = body + data;
+        });
+        request.on('end', function(){
+            var post = qs.parse(body);
+            var id = post.id;
+            fs.unlink(`data/${id}`, function(err){
+                response.writeHead(302, {Location: `/`});
+                response.end();
+            });
+            console.log(post);
         });
     }
     else{
