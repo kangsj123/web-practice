@@ -1,4 +1,4 @@
-var http = require('http');
+var http = require('http');//get 'http' module
 var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
@@ -6,6 +6,7 @@ var template = require('./lib/template.js');
 var path = require('path');
 var sanitizeHtml = require('sanitize-html');
 
+// app -> http.Server
 var app = http.createServer(function(request,response){
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
