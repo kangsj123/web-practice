@@ -4,14 +4,15 @@ var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
 var path = require('path');
+var sanitizeHtml = require('sanitize-html');
 
 var app = http.createServer(function(request,response){
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
     var pathname = url.parse(_url, true).pathname;
-    var title = queryData.id;
-    console.log('pathname ', pathname);
+    
     if(pathname === '/'){
+        var title = queryData.id;
         var id = queryData.id;
         var control = '<a href="/create">create</a> ';
         if(queryData.id === undefined){
@@ -29,16 +30,18 @@ var app = http.createServer(function(request,response){
         fs.readdir('./data', function(error, filelist){
             var filteredId = path.parse(id).base;
             fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
+                var sanitizedTitle = sanitizeHtml(title);
+                var sanitizedDescription = sanitizeHtml(description);
                 var list = template.list(filelist);
                 var nav = template.navbar(filelist);
-                var html = template.html(title, list, nav, `<h2>${title}</h2>${description}`, control);
+                var html = template.html(sanitizedTitle, list, nav, `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`, control);
                 response.writeHead(200);
                 response.end(html);
-            })
+            });
         });
     } else if(pathname === '/create'){
         var id = 'main';
-        title = 'create';
+        var title = 'create';
         fs.readdir('./data', function(error, filelist){
             var filteredId = path.parse(id).base;
             fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
