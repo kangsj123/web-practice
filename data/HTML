@@ -1,33 +1,46 @@
-<p>
-    <strong id="ref">1. tag</strong> : like strong, /strong covered in brackets<br>
-    strong tag : to mark as bold<br>
-    underline tag : to make words underlined<br>
-    header tag : h1 - h6 gets smaller word size<br>
-    new line tag : br tag<br>
-    paragraph tag : p tag<br>
-    image tag : img<br>
-    list tag : li tag -> abrev of list<br>
-    ul tag : <strong>parent tag of li</strong> that we must include to use li tag. = unordered list<br>
-    ol tag : numbering each list. It is the parent tag of li. = ordered list<br>
-    a tag : 가장 대표적인 태그. 이 태그 덕분에 웹페이지를 발견하고 최고의 검색 결과를 만들 수 있다. link(hypertext)를 위한 태그 = anchor<br>
-</p>
-<p>
-    <strong id="ref">2. attribute</strong> : like src, width to give more information in tag
-</p>
-<p>
-    <strong id="ref">3. structure</strong><br>
-    <strong>!doctype</strong><br>
-    <strong>html</strong><br>
-    <strong>head tag</strong> : information about contents<br>
-    title tag : search engine finds sites based on title tag, like book cover.<br>
-    meta tag<br>
-    <strong>/head</strong><br>
-    <strong>body tag</strong> : contents<br>
-    <strong>/body</strong><br>
-    <strong>/html</strong><br>
-</p>
-<p>
-    kakao 클론 코딩하면서 정리해두어야 할 부분 <br>
-    html5의 문법 -> 화면을 구성할때 쓰이는 태그 등(header, main, nav 등)<br>
-    class 명명 방식 -> BEM 및 다른 방식<br>
-</p>
+<ol>
+    <li><a href="#index1">1. tag</a></li>
+    <li><a href="#index2">2. attribute</a></li>
+    <li><a href="#index3">3. structure</a></li>
+</ol>
+<div id="article">
+    <h2>HTML이란 무엇인가?</h2>
+    <h3><a href="https://www.w3.org/TR/html51/" target="_blank" title="html5 specification">
+        Hypertext  Markup Language(HTML)</a> is the standard markup language for
+        <strong>creating <u>web</u> pages and web applications.</strong>
+    </h3>
+    <img src="coding.jpg" width="40%">
+    <p>
+        <strong id="ref">1. tag</strong> : like strong, /strong covered in brackets<br>
+        strong tag : to mark as bold<br>
+        underline tag : to make words underlined<br>
+        header tag : h1 - h6 gets smaller word size<br>
+        new line tag : br tag<br>
+        paragraph tag : p tag<br>
+        image tag : img<br>
+        list tag : li tag -> abrev of list<br>
+        ul tag : <strong>parent tag of li</strong> that we must include to use li tag. = unordered list<br>
+        ol tag : numbering each list. It is the parent tag of li. = ordered list<br>
+        a tag : 가장 대표적인 태그. 이 태그 덕분에 웹페이지를 발견하고 최고의 검색 결과를 만들 수 있다. link(hypertext)를 위한 태그 = anchor<br>
+    </p>
+    <p>
+        <strong id="ref">2. attribute</strong> : like src, width to give more information in tag
+    </p>
+    <p>
+        <strong id="ref">3. structure</strong><br>
+        <strong>!doctype</strong><br>
+        <strong>html</strong><br>
+        <strong>head tag</strong> : information about contents<br>
+        title tag : search engine finds sites based on title tag, like book cover.<br>
+        meta tag<br>
+        <strong>/head</strong><br>
+        <strong>body tag</strong> : contents<br>
+        <strong>/body</strong><br>
+        <strong>/html</strong><br>
+    </p>
+    <p>
+        kakao 클론 코딩하면서 정리해두어야 할 부분 <br>
+        html5의 문법 -> 화면을 구성할때 쓰이는 태그 등(header, main, nav 등)<br>
+        class 명명 방식 -> BEM 및 다른 방식<br>
+    </p>
+</div>

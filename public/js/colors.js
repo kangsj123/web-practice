@@ -22,15 +22,18 @@ var Body = {
 }
 function nightDayHandler(self){
   var target = document.querySelector('body');
+  var nav = $('.nav');
   if(self.value === 'night'){
     Body.setBackgroundColor('black');
     Body.setColor('white');
     self.value = 'day';
-    Links.setColor('powderblue');
+    nav.css('background-color', '#FF6D33');
+    Links.setColor('#FFF433');
   } else{
     Body.setBackgroundColor('white');
     Body.setColor('black');
     self.value = 'night';
-    Links.setColor('blue');
+    nav.css('background-color', '#D0EC82');
+    Links.setColor('#257891');
   }
 }

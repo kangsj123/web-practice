@@ -10,7 +10,7 @@ id 선택자
 }
 #grid ol{
   border-right: 2px solid rgb(208, 236, 130);
-  margin:0;
+  margin-right: 10px;
   padding:20px;
   padding-left:20px;
   list-style: none;
