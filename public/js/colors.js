@@ -21,18 +21,20 @@ var Body = {
   }
 }
 function nightDayHandler(self){
-  var target = document.querySelector('body');
   var nav = $('.nav');
+  var ol = $('ol');
   if(self.value === 'night'){
-    Body.setBackgroundColor('black');
+    Body.setBackgroundColor('#2b2a2a');
     Body.setColor('white');
     self.value = 'day';
+    ol.css('background-color', 'black');
     nav.css('background-color', '#FF6D33');
     Links.setColor('#FFF433');
   } else{
     Body.setBackgroundColor('white');
     Body.setColor('black');
     self.value = 'night';
+    ol.css('background-color', '#f7f7f7');
     nav.css('background-color', '#D0EC82');
     Links.setColor('#257891');
   }

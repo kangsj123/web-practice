@@ -10,7 +10,7 @@
   <li><a href="#index9">9. 유용한 사이트</a></li>  
 </ol>
 <div id="article">
-  <h2>CSS</h2>
+  <h2>CSS란 무엇인가?</h2>
   <h3><a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank" title="css specification">
     Cascading Style Sheet(CSS)</a> is a language that describes the style of an HTML document.
     CSS describes how HTML elements should be displayed.

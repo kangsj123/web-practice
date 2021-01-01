@@ -17,7 +17,7 @@ var app = http.createServer(function(request,response){
     if(pathname === '/'){
         var title = queryData.id;
         var id = queryData.id;
-        var control = '<a href="/create">create</a> ';
+        var control = '<div class="control-button"><a href="/create">create</a> ';
         if(queryData.id === undefined){
             id = 'main';
             title = 'Welcome';
@@ -26,17 +26,18 @@ var app = http.createServer(function(request,response){
             control =  control + `<a href="/update?id=${id}">update</a> `;
             control = control + 
             `<form action="delete_process" method="post">
-                <input type="hidden" name="id" value="${title}">
-                <input type="submit" value="delete">
+                    <input type="hidden" name="id" value="${title}">
+                    <input type="submit" value="delete">
             </form>`;
         }
+        control += '</div>';
         fs.readdir('./data', function(error, filelist){
             var filteredId = path.parse(id).base;
             fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
                 var sanitizedTitle = sanitizeHtml(title);
                 var sanitizedDescription = sanitizeHtml(description);
                 //var list = template.list(filelist);
-                 var nav = template.navbar(filelist);
+                var nav = template.navbar(filelist);
                 var html = template.html(sanitizedTitle, nav, `<h2>${sanitizedTitle}</h2>${control}${sanitizedDescription}`);
                 response.writeHead(200);
                 response.end(html);
