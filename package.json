@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/stellakang/web-practice#readme",
   "dependencies": {
-    "sanitize-html": "^2.3.0"
+    "sanitize-html": "^2.3.2"
   }
 }
